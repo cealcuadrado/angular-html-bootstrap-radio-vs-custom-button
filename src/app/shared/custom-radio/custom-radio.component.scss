@@ -1,0 +1,41 @@
+.radio-custom {
+  position: relative;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .radio-custom-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ddd;
+
+     /* Checkmark/Indicator (hidden is it not checked) */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  /* Background on mouseover */
+  &:hover input ~ .radio-custom-checkmark {
+    background-color: #ccc;
+  }
+
+  /* Background on checkbox */
+  input:checked ~ .radio-custom-checkmark {
+    background-color: #2196F3;
+  }
+
+  input:checked ~ .radio-custom-checkmark:after {
+    display: block;
+  }
+}

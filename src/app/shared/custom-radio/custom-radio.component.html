@@ -1,0 +1,28 @@
+<h4>Custom</h4>
+
+<hr/>
+
+<form [formGroup]="customForm" (submit)="submit()">
+  <label>Gender:</label>
+  <div class="form-group">
+    <div class="radio-custom">
+      <input type="radio" name="gender" value="male" formControlName="gender"/>
+      <span class="radio-custom-checkmark"></span>
+      <label for="male" class="ml-1">Male</label>
+    </div>
+    <div class="radio-custom">
+      <input type="radio" name="gender" value="female" formControlName="gender"/>
+      <span class="radio-custom-checkmark"></span>
+      <label for="female" class="ml-1">Female</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" [disabled]="customForm.invalid">
+      Submit
+    </button>
+  </div>
+</form>
+
+<hr/>
+
+<p>Form: {{customForm.value | json}}</p>

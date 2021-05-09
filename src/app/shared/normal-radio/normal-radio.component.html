@@ -1,0 +1,26 @@
+<h4>Normal</h4>
+
+<hr/>
+
+<form [formGroup]="normalForm" (submit)="submit()">
+  <label>Gender:</label>
+  <div class="form-group">
+    <div>
+      <input type="radio" name="gender" value="male" formControlName="gender"/>
+      <label for="male" class="ml-1">Male</label>
+    </div>
+    <div>
+      <input type="radio" name="gender" value="female" formControlName="gender"/>
+      <label for="female" class="ml-1">Female</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" [disabled]="normalForm.invalid">
+      Submit
+    </button>
+  </div>
+</form>
+
+<hr/>
+
+<p>Form: {{normalForm.value | json}}</p>
